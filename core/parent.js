@@ -1,9 +1,7 @@
-require("dotenv").config();
-
 const childProc = require('node:child_process');
 const { setTimeout } = require("node:timers");
 
-const keys = [process.env.TOKEN, process.env.TOKEN2, process.env.TOKEN3]
+const keys = require("./tokens.json")
 const twins = Array.from({ length: keys.length }, () => childProc.fork(`./core/children.js`));
 
 class Core {

@@ -1,6 +1,5 @@
 const { Client } = require("discord.js")
 const DiscordVoice = require('@discordjs/voice');
-
 class Core extends Client {
     constructor(intents, id, token) {
         super(intents)
